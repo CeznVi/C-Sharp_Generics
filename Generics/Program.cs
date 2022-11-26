@@ -63,6 +63,36 @@ namespace Generics
             ////-------------------------Кінець------------------------------------------------------------
 
             ////-------------------------Тест кільцової черги RingQueue------------------------------------
+            Console.WriteLine("\t\t Тест черги з пріорітетом\n");
+            Console.WriteLine("Тест черги з пріорітетом на стрінгах");
+            PriQueue<int,string> priQ = new();
+            priQ.Enqueue(1, "string priritet 1(додано першим)");
+            priQ.Enqueue(6, "string priritet 6");
+            priQ.Enqueue(2, "string priritet 2(додано першим)");
+            priQ.Enqueue(5, "string priritet 5");
+            priQ.Enqueue(1, "string priritet 1(додано після 1)");
+            priQ.Enqueue(2, "string priritet 2(додано після 2)");
+            priQ.Print();
+
+            Console.WriteLine("Тест черги з пріорітетом на Студентах");
+            PriQueue<StudentCard, Student> studentPriQ = new();
+            studentPriQ.Enqueue(student1.StudentCard, student1);
+            studentPriQ.Enqueue(student2.StudentCard, student2);
+            studentPriQ.Enqueue(student3.StudentCard, student3);
+
+            ////Студент 2 повинен бути першим у методі принт
+            studentPriQ.Print();
+            Console.WriteLine("Робимо Dequeue 2 рази");
+            studentPriQ.Dequeue();
+            studentPriQ.Dequeue();
+            studentPriQ.Print();
+
+            Console.ReadKey();
+            Console.Clear();
+            ////-------------------------Кінець------------------------------------------------------------
+
+
+            ////-------------------------Тест кільцової черги RingQueue------------------------------------
             Console.WriteLine("\t\t Тест кільцьової черги\n");
             Console.WriteLine("Тест кільцьової черги на стрінгах");
             RingQueue<string> ringQ = new();
@@ -76,11 +106,11 @@ namespace Generics
             ringQ.Ring();
             ringQ.Ring();
             ringQ.Print();
-            ////-------------------------------------------------------------------------------------------
+            //-------------------------------------------------------------------------------------------
             Console.WriteLine("\nТест кільцьової черги на студентах");
             RingQueue<Student> ringQstudent = new();
             ringQstudent.Enqueue(student1);
-            ringQstudent.Enqueue(student2); 
+            ringQstudent.Enqueue(student2);
             ringQstudent.Enqueue(student3);
             ringQstudent.Print();
             Console.WriteLine("Робимо метод рінг 2 рази");

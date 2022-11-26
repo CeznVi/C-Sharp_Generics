@@ -20,12 +20,13 @@ namespace Generics
 
        public void Print()
        {
+            Console.WriteLine("-----------------------------------------------------------");
             foreach (var item in this)
             {
                 Console.WriteLine(item);
             }
-            Console.WriteLine();
-       }
+            Console.WriteLine("-----------------------------------------------------------");
+        }
 
 
     }

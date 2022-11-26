@@ -43,7 +43,7 @@ namespace Generics
         public DateTime BirthDay { get; set; }
 
         public StudentCard StudentCard { get; set; }
-
+                
         public static IComparer FromBirthDate { get { return new DateComparer(); } }
 
         public override string ToString()
@@ -74,6 +74,7 @@ namespace Generics
             return $"{LastName} {FirstName}".GetHashCode();
 
         }
+        
         class DateComparer : IComparer
         {
             public int Compare(object x, object y)
